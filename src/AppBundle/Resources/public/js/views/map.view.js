@@ -26,14 +26,14 @@ var map = Backbone.View.extend({
         this.createPolylinesOnMap();
         this.createCirclesOnMap();
     },
-    
+
     createMap: function(options)
     {
         this.helper.addStyleToElement('#'+ options.divId, 'height:300px; width:100%');
         var mapCollection = this.helper.createMapCollection(options);
         this.mapView.createMap(mapCollection);
     },
-    
+
     createMarkersOnMap: function()
     {
         var mapOptions = {
@@ -41,7 +41,7 @@ var map = Backbone.View.extend({
             'centerX': parseInt(this.parameters.centerX),
             'centerY': parseInt(this.parameters.centerY),
             'zoom': parseInt(this.parameters.zoom),
-            
+
         };
         this.createMap(mapOptions);
         // auto zoom
@@ -65,7 +65,7 @@ var map = Backbone.View.extend({
         ]);
         this.mapView.markersOnMap(markerCollection);
     },
-    
+
     createPolylinesOnMap: function()
     {
         var mapOptions = {
@@ -102,7 +102,7 @@ var map = Backbone.View.extend({
         ]);
         this.mapView.polylineOnMap(polylineCollection);
     },
-    
+
     createCirclesOnMap: function()
     {
         var mapOptions = {
