@@ -1,0 +1,25 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <!-- Header -->
+    <header id="header">
+        <h1>MapBundle Documentation</h1>
+        {% include 'AppBundle:default:parts/menu.html.twig' with {map: 'osmap', title: 'OpenStreet Map', namespace: 'o'} %}
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- One -->
+        <section id="one">
+                <header class="major">
+                        <h2>Utilisation de MapBundle avec OpenStreet Map</h2>
+                </header>
+                <p>Eodem tempore Serenianus ex duce, cuius ignavia populatam in Phoenice Celsen ante rettulimus, pulsatae maiestatis imperii reus iure postulatus ac lege, incertum qua potuit suffragatione absolvi, aperte convictus familiarem suum cum pileo, quo caput operiebat, incantato vetitis artibus ad templum misisse fatidicum, quaeritatum expresse an ei firmum portenderetur imperium, ut cupiebat, et cunctum.</p>
+        </section>
+        {% include 'AppBundle:default:content.html.twig' with {map: 'osmap', title: 'OpenStreet Map', namespace: 'o'} %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% include 'AppBundle::osmap.js.twig' %}
+{% endblock %}

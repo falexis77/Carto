@@ -1,0 +1,3 @@
+[submodule "src/CanalTP/MapBundle"]
+	path = src/CanalTP/MapBundle
+	url = git@github.com:CanalTP/MapBundle.git

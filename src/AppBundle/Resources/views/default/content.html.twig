@@ -1,0 +1,53 @@
+<section>
+    <div id="{{ namespace }}init">
+        <header class="major">
+            <h2>Initialiser une Map</h2>
+        </header>
+        <div id="map"></div>
+        <p>Voici la function à utiliser pour créer une carte avec le MapBundle. </p>
+        <p>Pour notre exemple, nous avons extrait la function initialize d'une vue Backbone.</p>
+        <div>
+            <pre>
+                initialize: function()
+                {
+                    this.mapView = new ctpMap();
+                    this.helper = new ctpHelperView();
+                    // creation d'une carte avec les paramètres obligatoires
+                    var options = {
+                        'divId': 'map', //map div id
+                        'centerX': 47.219014,
+                        'centerY': -1.553714,
+                        'zoom': 12
+                    };
+                    this.helper.addStyleToElement('#'+ options.divId, 'height:300px; width:100%');
+                    var mapCollection = this.helper.createMapCollection(options);
+                    this.mapView.createMap(mapCollection);
+                }
+            </pre>
+        </div>
+    </div>
+</section>
+<section>
+    <div id="{{ namespace }}marker">
+        <header class="major">
+            <h2>Afficher un Marker</h2>
+        </header>
+        <div id="marker"></div>
+    </div>
+</section>
+<section>
+    <div id="{{ namespace }}polyline">
+        <header class="major">
+            <h2>Tracer un Polyline</h2>
+        </header>
+        <div id="polyline"></div>
+    </div>
+</section>
+<section>
+    <div id="{{ namespace }}circle">
+        <header class="major">
+            <h2>Dessiner un Circle</h2>
+        </header>
+        <div id="circle"></div>
+    </div>
+</section>

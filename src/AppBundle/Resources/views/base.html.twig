@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %} Welcome to MapBundle Documentation!{% endblock %}</title>
+        {% block stylesheets %}
+            <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+            <link rel="stylesheet" href="{{ asset('/bundles/app/css/main.css') }}" />
+            <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        {% endblock %}
+    </head>
+    <body id="top">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts
+                '@AppBundle/Resources/public/js/lib/jquery-1.9.1.min.js'
+                '@AppBundle/Resources/public/js/lib/underscore-min.js'
+                '@AppBundle/Resources/public/js/lib/backbone-min.js'
+                '@BazingaJsTranslationBundle/Resources/public/js/translator.min.js'
+                '@AppBundle/Resources/public/js/*'
+                '@AppBundle/Resources/public/js/ie/*'
+                '@AppBundle/Resources/public/js/views/*'
+                output='js/app.js'
+            %}
+                <script type="text/javascript" src="{{ asset_url|raw }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

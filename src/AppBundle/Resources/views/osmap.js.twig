@@ -1,0 +1,32 @@
+{% javascripts
+    '@CanalTPMapBundle/Resources/public/js/common/loader/*.js'
+    output='js/map.js'
+%}
+    <script type="text/javascript" src="{{ asset_url|raw }}"></script>
+{% endjavascripts %}
+<script>
+    var reverse_location = {};
+    {% if js_config.map.reverse_location.min_zoom is defined %}
+    reverse_location.min_zoom = {{ js_config.map.reverse_location.min_zoom }};
+    {% endif %}
+    CanalTP.close_img = '{{ asset('bundles/canaltpmap/images/ctpInfobulle/close.png') }}';
+</script>
+<script>
+    CanalTP.img_path = '{{ asset('/bundles/canaltpmap/js/ctpOsmaps/libs/OpenLayers-2.13.1/') }}';
+</script>
+{% javascripts
+    '@CanalTPMapBundle/Resources/public/js/ctpOsmaps/libs/OpenLayers-2.13.1/OpenLayers.js'
+    '@CanalTPMapBundle/Resources/public/js/ctpOsmaps/loader/*.js'
+    '@CanalTPMapBundle/Resources/public/js/common/views/*.js'
+    '@CanalTPMapBundle/Resources/public/js/common/models/*.js'
+    '@CanalTPMapBundle/Resources/public/js/ctpOsmaps/views/*.js'
+    '@CanalTPMapBundle/Resources/public/js/ctpOsmaps/libs/*.js'
+    '@CanalTPMapBundle/Resources/public/js/ctpOsmaps/models/*.js'
+    '@CanalTPMapBundle/Resources/public/js/common/collections/libCollections.js'
+    '@CanalTPMapBundle/Resources/public/js/common/collections/*.js'
+    '@CanalTPMapBundle/Resources/public/js/ctpOsmaps/collections/*.js'
+    output='js/os_map.js'
+%}
+    <script type="text/javascript" src="{{ asset_url|raw }}"></script>
+{% endjavascripts %}
+
